@@ -1,0 +1,24 @@
+const questionBtn = document.getElementById("questionBtn");
+const question = document.getElementById("question");
+
+const questions = [
+    "Como você pode usar a IA para aprender, em vez de apenas copiar respostas?",
+    "Quais cuidados devemos ter ao utilizar Inteligência Artificial na escola?",
+    "A tecnologia pode ajudar a desenvolver sua criatividade? Como?",
+    "Você consegue identificar quando uma informação gerada por IA precisa ser verificada?",
+    "Como seria uma escola que utiliza IA de forma ética e responsável?"
+];
+
+questionBtn.addEventListener("click", () => {
+
+    const randomIndex = Math.floor(Math.random() * questions.length);
+
+    question.textContent = questions[randomIndex];
+
+    question.style.opacity = "0";
+
+    setTimeout(() => {
+        question.style.transition = "opacity 0.5s";
+        question.style.opacity = "1";
+    }, 50);
+});
